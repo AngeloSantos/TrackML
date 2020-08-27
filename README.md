@@ -30,5 +30,16 @@ Summary about R and Bash Scripts
 * get_models.R - train models with optimized parameters only
 * get_models_Npred.R - train models with optimized parameters based on splitted training and optimized samples
 * get_models_Npred.sh - create *R* scripts based on *get_models_Npred.R* for each sample after splitting
-
+* get_radius_angelos.lib.R - apply circle fit based on Angelo's model with best triplet combinations
+* get_radius_circular.lib.R - apply circle fit based on *circular* lib
+* get_radius_pracma.lib.R - apply circle fit based on *pracma* lib
+* optimize_parameters.R - optimize *GBM* parameters for x, y and z coordinates
+* optimize_parameters_Npred.R - optimize *GBM* parameters for splitted training and optimization samples
+* optimize_parameters_Npred.sh - create *R* scripts based on *optimize_parameters_Npred.R* for each sample after splitting
+* optimize_parameters_pt.R - optimize *GBM* parameters to predict pT
+* optimize_parameters_radius.R - optimize *GBM* parameters to predict tracking radius
+* plot_detector.R - create figures of the detector based on the hits from Kaggle
+* plot_distHH_vs_Nhits.R - create figure of distance between two expected nearest hits versus number of hits per layer
+* plot_fit_circunference.R - create figure of circle fit on tracking hits
+* plot_hist_of_deltaphi.R - create figure of deltaphi
 
