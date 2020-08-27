@@ -10,7 +10,7 @@ Almost all scripts were created based on **R** language.
 
 There is NO information about functionality of all scripts yet.
 
-Understanding R and Bash Scripts
+Summary about R and Bash Scripts
 ================================
 
 * apply_model.R - application step based on optimized *GMB* models
