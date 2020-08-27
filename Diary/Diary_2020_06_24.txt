@@ -1,0 +1,36 @@
+######################################
+
+- momentum/fit_2020_06_10/
+	* library circular
+- momentum/fit_2020_06_20/
+	* library pracma
+- momentum/fit_2020_06_21/
+	* library circular (low pt)
+	* mean over 120 combinations (high pt)
+- momentum/fit_2020_06_22/
+	* finding best constant
+		* providing (r, x0, y0) to library circular
+	* fenomenology expectation
+- momentum/fit_2020_06_23/
+	* mean over best 7 combinations
+		* works only for high pt
+- momentum/fit_2020_06_23_v2/
+	* mean over best 7 combinations (high pt)
+	* mean over 120 combinations (low pt)
+- momentum/fit_2020_06_23_v3/
+        * mean over best 7 combinations (high pt)
+        * library circular (low pt)
+                * with input from first one
+- momentum/fit_2020_06_23_v4/
+	* finding best triplet combinations
+- momentum/fit_2020_06_24/
+	* mean over best triplet combinations
+- momentum/fit_2020_06_24_v2/
+	* mean over best triplet combinations
+	* provide mean (r, x0, y0) to library circular
+	* This is my solution (angelo's lib) !!! Good !!!
+- momentum/fit_2020_06_24_v2/validation_2020_07_06/
+	* validation step
+	* 3k tracks
+	* data/optimization_sample-05_05.csv
+

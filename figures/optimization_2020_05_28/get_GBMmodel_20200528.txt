@@ -1,0 +1,468 @@
+*********************************************
+* Reading training and optimization input files ...
+Loading required package: gbm
+Loaded gbm 2.1.5
+*********************************************
+* Training model for layer 5
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over rho ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var   rel.inf
+z_4     z_4 31.034540
+phi_4 phi_4 20.903926
+rho_3 rho_3 10.980065
+rho_2 rho_2  7.493933
+phi_1 phi_1  7.434904
+rho_1 rho_1  6.874365
+rho_4 rho_4  3.563814
+phi_2 phi_2  2.853359
+z_1     z_1  2.773642
+phi_3 phi_3  2.317051
+z_2     z_2  1.983055
+z_3     z_3  1.787345
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( rho ) = 1.323247  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over phi ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+phi_4 phi_4 98.549391734
+phi_3 phi_3  0.569374948
+phi_1 phi_1  0.303198047
+rho_1 rho_1  0.218020997
+phi_2 phi_2  0.123489915
+rho_2 rho_2  0.079255300
+rho_4 rho_4  0.077811426
+rho_3 rho_3  0.033051429
+z_1     z_1  0.020278646
+z_2     z_2  0.011105405
+z_3     z_3  0.010197465
+z_4     z_4  0.004824688
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( phi ) = 0.00438526  mm^2 | 160 trees | tree position = 8 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over z ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+z_4     z_4 9.986575e+01
+z_1     z_1 1.121699e-01
+z_2     z_2 5.284478e-03
+rho_1 rho_1 3.455691e-03
+rho_4 rho_4 2.961430e-03
+rho_3 rho_3 2.494160e-03
+rho_2 rho_2 2.012855e-03
+z_3     z_3 1.833415e-03
+phi_1 phi_1 1.398421e-03
+phi_4 phi_4 1.047903e-03
+phi_2 phi_2 7.972568e-04
+phi_3 phi_3 7.960878e-04
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( z ) = 2.666938  mm^2 | 980 trees | tree position = 49 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+*********************************************
+* Training model for layer 6
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over rho ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var   rel.inf
+z_4     z_4 28.260590
+phi_4 phi_4 13.397038
+rho_2 rho_2  8.554912
+rho_1 rho_1  7.729346
+rho_4 rho_4  7.687498
+phi_2 phi_2  7.297942
+phi_1 phi_1  6.779477
+rho_3 rho_3  5.751616
+phi_3 phi_3  4.550183
+z_1     z_1  4.189516
+z_3     z_3  2.950601
+z_2     z_2  2.851280
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( rho ) = 2.09467  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over phi ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+phi_4 phi_4 98.300508379
+phi_1 phi_1  0.424049717
+phi_3 phi_3  0.392479363
+rho_1 rho_1  0.340025849
+rho_3 rho_3  0.227721542
+phi_2 phi_2  0.127059839
+rho_4 rho_4  0.094467414
+rho_2 rho_2  0.037406709
+z_1     z_1  0.028362744
+z_4     z_4  0.018536627
+z_3     z_3  0.004856053
+z_2     z_2  0.004525763
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( phi ) = 0.01529657  mm^2 | 160 trees | tree position = 8 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over z ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+z_4     z_4 9.994438e+01
+z_1     z_1 3.125393e-02
+rho_4 rho_4 9.045346e-03
+z_3     z_3 4.159005e-03
+z_2     z_2 2.680423e-03
+phi_4 phi_4 2.243387e-03
+phi_3 phi_3 1.499031e-03
+phi_1 phi_1 1.452446e-03
+phi_2 phi_2 1.239281e-03
+rho_3 rho_3 7.788788e-04
+rho_1 rho_1 7.611748e-04
+rho_2 rho_2 5.041763e-04
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( z ) = 1.631334  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+*********************************************
+* Training model for layer 7
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over rho ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var   rel.inf
+z_4     z_4 31.348097
+rho_2 rho_2 10.764116
+rho_1 rho_1  9.476271
+phi_4 phi_4  9.263881
+rho_3 rho_3  8.183714
+rho_4 rho_4  7.960524
+phi_1 phi_1  5.946161
+z_1     z_1  4.946731
+phi_3 phi_3  3.927420
+z_2     z_2  3.771039
+phi_2 phi_2  2.441129
+z_3     z_3  1.970917
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( rho ) = 2.833133  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over phi ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var     rel.inf
+phi_4 phi_4 96.80845792
+phi_1 phi_1  1.11946602
+rho_3 rho_3  0.75623512
+phi_2 phi_2  0.46499727
+rho_2 rho_2  0.24224807
+phi_3 phi_3  0.18586184
+rho_1 rho_1  0.13371188
+z_1     z_1  0.11422604
+rho_4 rho_4  0.08107574
+z_4     z_4  0.04200664
+z_3     z_3  0.03073807
+z_2     z_2  0.02097538
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( phi ) = 0.008747596  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over z ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+z_4     z_4 9.996694e+01
+z_1     z_1 1.785814e-02
+z_2     z_2 4.821266e-03
+rho_4 rho_4 3.731741e-03
+z_3     z_3 1.399287e-03
+rho_2 rho_2 1.058421e-03
+rho_3 rho_3 9.265556e-04
+rho_1 rho_1 8.957917e-04
+phi_1 phi_1 7.904989e-04
+phi_3 phi_3 6.259212e-04
+phi_2 phi_2 5.438741e-04
+phi_4 phi_4 4.059135e-04
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( z ) = 1.796898  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+*********************************************
+* Training model for layer 8
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over rho ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var   rel.inf
+z_4     z_4 29.687282
+phi_4 phi_4 10.987075
+rho_1 rho_1  9.413572
+rho_3 rho_3  9.235436
+rho_4 rho_4  8.980258
+rho_2 rho_2  8.754700
+z_1     z_1  5.965125
+phi_1 phi_1  5.866913
+phi_3 phi_3  3.488233
+phi_2 phi_2  2.867913
+z_3     z_3  2.486228
+z_2     z_2  2.267264
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( rho ) = 2.986842  mm^2 | 980 trees | tree position = 49 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over phi ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+phi_4 phi_4 96.476976506
+phi_1 phi_1  1.486580002
+rho_2 rho_2  0.643070802
+phi_2 phi_2  0.518069716
+phi_3 phi_3  0.423697456
+rho_3 rho_3  0.159125941
+rho_1 rho_1  0.112867989
+rho_4 rho_4  0.090424433
+z_1     z_1  0.044836685
+z_2     z_2  0.028062315
+z_4     z_4  0.008194759
+z_3     z_3  0.008093396
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( phi ) = 0.01159187  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over z ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+z_4     z_4 9.998463e+01
+z_1     z_1 7.317381e-03
+rho_4 rho_4 2.135216e-03
+phi_4 phi_4 1.919011e-03
+z_3     z_3 9.452745e-04
+z_2     z_2 7.809279e-04
+phi_3 phi_3 6.239709e-04
+phi_2 phi_2 4.096385e-04
+phi_1 phi_1 3.987628e-04
+rho_2 rho_2 3.623978e-04
+rho_3 rho_3 2.438169e-04
+rho_1 rho_1 2.330518e-04
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( z ) = 4.880811  mm^2 | 980 trees | tree position = 49 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+*********************************************
+* Training model for layer 9
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over rho ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var   rel.inf
+z_4     z_4 35.381163
+rho_4 rho_4  9.189352
+rho_3 rho_3  9.134574
+rho_1 rho_1  9.006739
+rho_2 rho_2  8.600726
+phi_4 phi_4  6.596854
+phi_1 phi_1  5.914637
+z_1     z_1  3.934477
+phi_3 phi_3  3.788984
+phi_2 phi_2  3.351421
+z_3     z_3  2.679326
+z_2     z_2  2.421745
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( rho ) = 3.401586  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over phi ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var     rel.inf
+phi_4 phi_4 96.00862635
+phi_1 phi_1  1.92183294
+phi_2 phi_2  0.67983995
+rho_2 rho_2  0.32141569
+phi_3 phi_3  0.29550441
+rho_1 rho_1  0.20620914
+rho_3 rho_3  0.20553395
+rho_4 rho_4  0.17673562
+z_1     z_1  0.11933320
+z_4     z_4  0.03596346
+z_2     z_2  0.01862263
+z_3     z_3  0.01038266
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( phi ) = 0.01094796  mm^2 | 960 trees | tree position = 48 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over z ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+z_4     z_4 9.988335e+01
+z_3     z_3 9.175945e-02
+rho_3 rho_3 5.255381e-03
+z_1     z_1 3.667321e-03
+rho_4 rho_4 3.325209e-03
+phi_4 phi_4 2.337759e-03
+z_2     z_2 2.327385e-03
+rho_2 rho_2 2.076975e-03
+rho_1 rho_1 2.027790e-03
+phi_1 phi_1 1.609095e-03
+phi_3 phi_3 1.364571e-03
+phi_2 phi_2 8.976747e-04
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( z ) = 8.543014  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+*********************************************
+* Training model for layer 10
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over rho ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var   rel.inf
+z_3     z_3 25.724071
+z_4     z_4 12.580281
+rho_2 rho_2  8.980601
+rho_1 rho_1  8.812325
+rho_4 rho_4  8.794477
+rho_3 rho_3  8.626202
+phi_1 phi_1  5.586190
+phi_4 phi_4  4.983630
+z_1     z_1  4.367414
+z_2     z_2  3.878160
+phi_3 phi_3  3.835907
+phi_2 phi_2  3.830740
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( rho ) = 3.588345  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over phi ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+phi_4 phi_4 94.779926827
+phi_1 phi_1  3.364335379
+phi_3 phi_3  0.471084510
+phi_2 phi_2  0.444361924
+rho_4 rho_4  0.326422702
+rho_3 rho_3  0.212859512
+rho_1 rho_1  0.139656072
+rho_2 rho_2  0.119327705
+z_1     z_1  0.113884310
+z_3     z_3  0.013295404
+z_2     z_2  0.012155076
+z_4     z_4  0.002690578
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( phi ) = 0.0205445  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+  ---------------------------------------------
+  ---------------------------------------------
+  * Training over z ...
+    ---------------------------------------------
+    * Relative importance of each input variable:
+        var      rel.inf
+z_3     z_3 74.586101937
+z_4     z_4 25.366738622
+z_1     z_1  0.008652573
+rho_3 rho_3  0.006908733
+rho_2 rho_2  0.006434371
+rho_4 rho_4  0.005405972
+rho_1 rho_1  0.005327453
+z_2     z_2  0.004883343
+phi_4 phi_4  0.002786687
+phi_1 phi_1  0.002666324
+phi_3 phi_3  0.002389881
+phi_2 phi_2  0.001704103
+    ---------------------------------------------
+    * Predicting 5th hit ...
+    * Minimum MSE( z ) = 30.34574  mm^2 | 1000 trees | tree position = 50 
+    ---------------------------------------------
+    * Saving image of MSE vs. Number of Trees ...
+    ---------------------------------------------
+    * Saving image of Real vs. Predicted Values ...
+* Done!
+*********************************************

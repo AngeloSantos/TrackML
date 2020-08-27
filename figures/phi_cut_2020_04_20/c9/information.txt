@@ -1,0 +1,86 @@
+training_file_name        = "data/training_sequences-05_05.csv"
+optimization_file_name    = "data/optimization_sequences-05_05.csv"
+optimization_p5_file_name = "data/optimization_p5-05_05.csv"
+
+training_sequence        = c(seq(5, 126000, 6))
+optimization_sequence    = c(12001:15000)
+optimization_sequence_p5 = c(12001:15000)
+
+num.trees.x = c(seq(20, 1000, 20))
+num.trees.y = c(seq(20, 1000, 20))
+num.trees.z = c(seq(20, 1000, 20))
+
+test_vs_pred.x = "figures/phi_cut_2020_04_20/c9/test_vs_pred_x.png"
+test_vs_pred.y = "figures/phi_cut_2020_04_20/c9/test_vs_pred_y.png"
+test_vs_pred.z = "figures/phi_cut_2020_04_20/c9/test_vs_pred_z.png"
+
+mse_vs_trees.x = "figures/phi_cut_2020_04_20/c9/mse_vs_trees_x.png"
+mse_vs_trees.y = "figures/phi_cut_2020_04_20/c9/mse_vs_trees_y.png"
+mse_vs_trees.z = "figures/phi_cut_2020_04_20/c9/mse_vs_trees_z.png"
+
+*********************************************
+* Relative importance of each input variable:
+*** for x_5:
+    var    rel.inf
+x_4 x_4 80.2564597
+y_4 y_4  5.7864610
+x_3 x_3  4.4735608
+y_1 y_1  2.5887750
+x_1 x_1  2.5245554
+x_2 x_2  1.6477267
+z_4 z_4  1.2251634
+y_2 y_2  0.5875889
+y_3 y_3  0.4708519
+z_2 z_2  0.1552858
+z_3 z_3  0.1524073
+z_1 z_1  0.1311643
+*** for y_5:
+    var      rel.inf
+y_4 y_4 96.040028624
+y_1 y_1  3.157428784
+x_4 x_4  0.640148906
+x_1 x_1  0.061531273
+y_2 y_2  0.028756211
+y_3 y_3  0.016692603
+z_1 z_1  0.013008630
+z_2 z_2  0.012586071
+x_2 x_2  0.012238011
+x_3 x_3  0.009598363
+z_4 z_4  0.004368996
+z_3 z_3  0.003613528
+*** for z_5:
+    var      rel.inf
+z_4 z_4 99.897333287
+z_1 z_1  0.030935683
+z_2 z_2  0.017070170
+z_3 z_3  0.011125719
+x_3 x_3  0.010248189
+x_2 x_2  0.006997613
+x_1 x_1  0.006629918
+x_4 x_4  0.006411877
+y_1 y_1  0.003988535
+y_3 y_3  0.003725307
+y_4 y_4  0.003118987
+y_2 y_2  0.002414716
+*********************************************
+* Starting prediction
+*** for x_5...
+*** for y_5...
+*** for x_5...
+*********************************************
+* Dimension x:  3000 50 
+* Dimension y:  3000 50 
+* Dimension z:  3000 50 
+*********************************************
+* Computing errors
+---------------------------------------------
+*** for x_5...
+*** Minimum MSE(x) = 1.404525  mm^2 | 1000 trees | tree position = 50 
+---------------------------------------------
+*** for y_5...
+*** Minimum MSE(y) = 3.269391  mm^2 | 1000 trees | tree position = 50 
+---------------------------------------------
+*** for z_5...
+*** Minimum MSE(z) = 7.562998  mm^2 | 880 trees | tree position = 44 
+*********************************************
+

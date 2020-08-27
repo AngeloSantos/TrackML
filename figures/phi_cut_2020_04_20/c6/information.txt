@@ -1,0 +1,81 @@
+training_file_name        = "data/training_sequences-05_05.csv"
+optimization_file_name    = "data/optimization_sequences-05_05.csv"
+optimization_p5_file_name = "data/optimization_p5-05_05.csv"
+
+training_sequence        = c(seq(2, 126000, 6) )
+optimization_sequence    = c(3001:6000)
+optimization_sequence_p5 = c(3001:6000)
+
+num.trees.x = c(seq(20, 1000, 20))
+num.trees.y = c(seq(20, 1000, 20))
+num.trees.z = c(seq(20, 1000, 20))
+
+test_vs_pred.x = "figures/phi_cut_2020_04_20/c6/test_vs_pred_x.png"
+test_vs_pred.y = "figures/phi_cut_2020_04_20/c6/test_vs_pred_y.png"
+test_vs_pred.z = "figures/phi_cut_2020_04_20/c6/test_vs_pred_z.png"
+
+mse_vs_trees.x = "figures/phi_cut_2020_04_20/c6/mse_vs_trees_x.png"
+mse_vs_trees.y = "figures/phi_cut_2020_04_20/c6/mse_vs_trees_y.png"
+mse_vs_trees.z = "figures/phi_cut_2020_04_20/c6/mse_vs_trees_z.png"
+
+*********************************************
+* Relative importance of each input variable:
+*** for x_5:
+    var    rel.inf
+x_3 x_3 43.6850283
+x_4 x_4 14.4472311
+x_1 x_1 11.1630204
+x_2 x_2  7.8843018
+z_1 z_1  7.2641893
+z_3 z_3  5.6889073
+z_2 z_2  5.3654843
+z_4 z_4  2.1676350
+y_4 y_4  1.7043983
+y_1 y_1  0.3600335
+y_3 y_3  0.1569127
+y_2 y_2  0.1128581
+*** for y_5:
+    var      rel.inf
+y_4 y_4 97.355857468
+x_4 x_4  2.188807410
+y_1 y_1  0.321905880
+x_1 x_1  0.039728632
+x_3 x_3  0.026183571
+x_2 x_2  0.020200667
+z_3 z_3  0.015245201
+y_3 y_3  0.012646037
+y_2 y_2  0.005874165
+z_4 z_4  0.005131668
+z_1 z_1  0.004457369
+z_2 z_2  0.003961931
+*** for z_5:
+    var      rel.inf
+z_4 z_4 99.012648086
+z_3 z_3  0.414970635
+z_1 z_1  0.298360855
+z_2 z_2  0.133311457
+x_1 x_1  0.045319461
+x_3 x_3  0.038358157
+x_2 x_2  0.033194923
+x_4 x_4  0.011626675
+y_1 y_1  0.004522631
+y_3 y_3  0.003218680
+y_4 y_4  0.002827922
+y_2 y_2  0.001640519
+*********************************************
+* Dimension x:  3000 50 
+* Dimension y:  3000 50 
+* Dimension z:  3000 50 
+*********************************************
+* Computing errors
+---------------------------------------------
+*** for x_5...
+*** Minimum MSE(x) = 1.396852  mm^2 | 380 trees | tree position = 19 
+---------------------------------------------
+*** for y_5...
+*** Minimum MSE(y) = 1.428426  mm^2 | 980 trees | tree position = 49 
+---------------------------------------------
+*** for z_5...
+*** Minimum MSE(z) = 2.921977  mm^2 | 80 trees | tree position = 4 
+*********************************************
+

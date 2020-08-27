@@ -1,0 +1,57 @@
+##########################################
+###### Datasets
+
+*** Dataset base
+- data/eta_n0.5-0.5_phi_ninf-pinf.csv
+
+*** Training samples
+- data/data_2020_06_12/training_sequences_1.csv
+- data/data_2020_06_12/training_sequences_2.csv
+- data/data_2020_06_12/training_sequences_3.csv
+	- 3 samples of 7000 tracks for training
+	- based on data/training_sample-05_05.csv
+
+*** Optimization samples
+- data/optimization_sequences-05_05.csv
+- data/optimization_p5-05_05.csv
+	- 3000 tracks
+
+*** Application samples
+- data/application_sequences-05_05.csv
+- data/application_p5-05_05.csv
+- application_whole_track.csv
+	- 6000 tracks
+
+##########################################
+###### Optimization Step
+
+*** Cartesian coordinates
+*** Taking into account 3 training samples of 7000 tracks each
+- figures/optimization_2020_06_12/
+- models/2020_06_13/
+
+*** (x,y,z) coordinates from (x,y,z,rho,eta,phi) coordinates
+- figures/optimization_2020_06_14/
+	- Taking into account 1 training sample of 21000 tracks
+- figures/optimization_2020_06_14_v2/
+	- Taking into account 3 training samples of 7000 tracks each
+
+##########################################
+###### Application Step
+
+*** Cartesian coordinates
+*** Taking into account 3 training samples of 7000 tracks each
+- figures/application_2020_06_13/
+	- With dataset updade
+- figures/application_2020_06_13_v2/
+	- Without dataset updade
+
+*** Cartesian coordinates
+*** Taking into account 3 training samples of 7000 tracks each
+*** Taking into account discrete values of z in layeers 9 and 10
+- figures/application_2020_06_13_v3/
+        - With dataset updade
+- figures/application_2020_06_13_v4/
+        - Without dataset updade
+
+##########################################

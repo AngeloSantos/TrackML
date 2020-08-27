@@ -1,0 +1,13 @@
+https://indico.cern.ch/event/96989/contributions/2124495/attachments/1114189/1589705/WellsTracking.pdf
+
+https://www.physi.uni-heidelberg.de/~fschney/detektoren/detector6.pdf
+
+https://www.desy.de/~garutti/LECTURES/ParticleDetectorSS12/L9_Tracking.pdf
+
+* Radius results:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  582.2  1938.1  2318.1  2291.2  2591.8  5477.7 
+* Constant results:
+     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
+0.0005820 0.0006056 0.0006186 0.0008041 0.0007485 0.0450478 
+

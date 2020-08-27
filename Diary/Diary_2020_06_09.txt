@@ -1,0 +1,77 @@
+##################################
+##### Datasets
+
+*** Original files
+- data/data_2020_05_28/data/data_2020_05_28/eta_n0.5-0.5_phi_ninf-pinf_20200528124042_tracks.csv
+- data/data_2020_05_28/eta_n0.5-0.5_phi_ninf-pinf_20200528124042_events.csv
+- data/data_2020_05_28/eta_n0.5-0.5_phi_ninf-pinf_20200528124042_submission.csv
+- data/data_2020_05_28/eta_n0.5-0.5_phi_ninf-pinf_20200528124042_truth.csv
+    - pt > 1 GeV
+    - |eta| < 0.5
+    - no phi cut
+    - 10 hits per layer
+    - 30k tracks
+    
+*** Training, optimization and application Samples
+- data/data_2020_05_28/training_sample.csv
+- data/data_2020_05_28/optimization_sample.csv
+- data/data_2020_05_28/application_sample.csv
+    - Removing hits without content
+
+*** Training, optimization and application Sequences
+- data/data_2020_05_28/training_sequences.csv
+- data/data_2020_05_28/optimization_sequences.csv
+- data/data_2020_05_28/application_sequences.csv
+- data/data_2020_05_28/optimization_p5.csv
+- data/data_2020_05_28/application_p5.csv
+
+*** Training sequences
+- data/data_2020_05_28/training_sequences_1.csv
+- data/data_2020_05_28/training_sequences_2.csv
+    - Each dataset with half (10500) number of tracks
+  
+##################################
+##### Models (Training Step)
+
+*** Cartesian coordinates
+- models/2020_06_08/
+    - Based on training datasets with half (10500) number of tracks
+    
+- models/2020_06_09/
+    - Based on training datasets with 21000 tracks
+
+##################################
+##### Optimization Step
+
+*** Cartesian coordinates
+- figures/optimization_2020_06_06/
+    - Based on training datasets with 1/3 (7000) of the number of tracks
+
+- figures/optimization_2020_06_07/
+    - Based on a training dataset with 21000 tracks
+    
+- figures/optimization_2020_06_07_v2/
+    - Based on training datasets with half (10500) number of tracks
+
+##################################
+##### Application Step
+
+*** Cartesian coordinates
+- figures/application_2020_06_08/
+    - Based on training datasets with half (10500) number of tracks
+    - With dataset update
+- figures/application_2020_06_08_v2/
+    - Based on training datasets with half (10500) number of tracks
+    - Without dataset update
+- figures/application_2020_06_09/
+    - Based on a training dataset with 21000 tracks
+
+
+
+
+
+
+
+
+
+##################################

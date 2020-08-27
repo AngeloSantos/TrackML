@@ -1,0 +1,108 @@
+#########################################
+# Dataset
+
+### Dataset without Kaggle scores:
+- data/eta_n0.5-0.5_phi_ninf-pinf.csv
+	- 30k tracks
+	- pT > 1 GeV
+	- |eta| < 0.5
+	- No phi cut
+	- n.Hits = 10
+- data/training_sequences-05_05.csv
+	- 21k tracks
+	- 126k sequences of 5 hits
+	- first 21k tracks from hit 1 to 5
+	- ...
+	- last 21k tracks from hit 6 to 10
+- data/optimization_sequences-05_05.csv
+	- 3k tracks
+	- 18k sequences of 4 hits
+        - first 3k tracks from hit 1 to 4
+        - ...
+        - last 3k tracks from hit 6 to 9
+- data/optimization_p5-05_05.csv
+        - 3k tracks
+        - 18k sequences of 1 hit
+        - first 3k tracks from hit 5
+        - ...
+        - last 3k tracks from hit 10
+- data/application_sequences-05_05.csv
+        - 6k tracks
+        - 6k sequences of 4 hits
+        - first 6k tracks from hit 1 to 4
+        - ...
+        - last 6k tracks from hit 6 to 9
+- data/application_p5-05_05.csv
+        - 6k tracks
+        - 36k sequences of 1 hit
+        - first 6k tracks from hit 5
+        - ...
+        - last 6k tracks from hit 10
+- data/application_whole_track.csv
+        - 6k tracks with 10 hits each
+
+#########################################
+# Optimization Step
+
+### Cartesian coordinates
+- models/2020_05_16/
+- figures/optimization_2020_05_14/optParams_20200514_v1.txt
+	- Information about optimized parameters
+- figures/optimization_2020_05_14/get_GBMmodel_20200516.txt
+	- Information about optimized models
+	- Relative influence from each variable
+- figures/optimization_2020_05_14/heatmaps/
+	- Figures of heat maps
+- figures/optimization_2020_05_14/mse_vs_ntrees_2020_05_16/
+	- Figures of MSE vs. Number of Trees
+	- Figures of Real vs. Predicted (x, y, z) values
+### Dividing training sample in 10
+- each sample with 2100 tracks
+- figures/optimization_2020_06_05/
+
+### Cylinder coordinates
+- models/2020_05_30
+- figures/optimization_2020_05_28
+
+#########################################
+# Application Step
+
+### Cartesian coordinates with dataset update
+- figures/application_2020_05_17/leastDist.pred_near.csv
+	- Least distance between predicted and nearest hits
+	- 6k rows
+	- 6 columns
+- figures/application_2020_05_17/leastDist.pred_real.csv
+        - Least distance between predicted and real hits
+        - 6k rows
+        - 6 columns
+- figures/application_2020_05_17/leastDist.near_real.csv
+        - Least distance between nearest and real hits
+        - 6k rows
+        - 6 columns
+- figures/application_2020_05_17/predicted.hits.csv
+	- Predicted hits
+	- 6k tracks
+	- First 4 hits are real
+	- Next 6 hits are predicted ones
+- figures/application_2020_05_17/nearest.hits.csv
+        - Nearest hits
+        - 6k tracks
+        - First 4 hits are real
+        - Next 6 hits are the nearest ones (from predicted)
+- figures/application_2020_05_17/rtm.csv
+        - Reconstructed Tracks MAP (RTM)
+        - 6k tracks
+        - First column with real track id
+        - Next 6 columns with track id based on the nearest hits
+- figures/application_2020_05_17/reconstructed_tracks_20200518/
+	- Figures with reconstructed tracks (successes and failures)
+
+### Cartesian coordinates without dataset update
+- figures/application_2020_05_19
+
+### Cylinder coordinates with dataset update
+- figures/application_2020_05_30
+
+
+
