@@ -30,7 +30,7 @@ Summary about R and Bash Scripts
 * get_models.R - train models with optimized parameters only
 * get_models_Npred.R - train models with optimized parameters based on splitted training and optimized samples
 * get_models_Npred.sh - create *R* scripts based on *get_models_Npred.R* for each sample after splitting
-* get_radius_angelos.lib.R - apply circle fit based on Angelo's model with best triplet combinations
+* get_radius_angelos.lib.R - check circle fit based on Angelo's model with best triplet combinations
 * get_radius_circular.lib.R - apply circle fit based on *circular* lib
 * get_radius_pracma.lib.R - apply circle fit based on *pracma* lib
 * optimize_parameters.R - optimize *GBM* parameters for x, y and z coordinates
@@ -41,5 +41,14 @@ Summary about R and Bash Scripts
 * plot_detector.R - create figures of the detector based on the hits from Kaggle
 * plot_distHH_vs_Nhits.R - create figure of distance between two expected nearest hits versus number of hits per layer
 * plot_fit_circunference.R - create figure of circle fit on tracking hits
-* plot_hist_of_deltaphi.R - create figure of deltaphi
+* plot_hist_of_deltaphi.R - create figure of deltaphi between two subsequent hits in a track
+* plot_hist_of_z.R - create histogram with Z axis values
+* plot_hits.R - create figures of the detector based on the hits from Kaggle from splitted training samples
+* plot_layers_success_fail_hits.R - create figures of the hits from success and fail reconstruction in Z and Y axis
+* plot_leastDist.R - create histogram of the least distance between nearest and real hits
+* plot_reconstructed_tracks.R - create figure with real, predicted and reconstructed tracks
+* pt_angelos.lib.R - apply circle fit (based on Angelo's model with best triplet combinations) on application sample
+* pt_vs_radius_expectation.R - create figure of real pT versus expected track radius
+* show_metrics.R - compute number of sucesses and failures (for each layer) after *GBM* tracking reconstruction
+
 
