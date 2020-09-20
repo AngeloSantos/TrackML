@@ -1,0 +1,38 @@
+#############################################
+#
+#### Using cosine similarity to search hits
+#
+#############################################
+
+* data/figures/histograms_2020_09_19/
+	- radius of each layer
+
+#############################################
+##### Scripts
+
+* apply_model_cosine.R
+	- Apply BDT model considering cosine similarity
+* plot_cos.similarity.R
+        - Plot cosine similarity values in each layer
+* plot_max.cos.similarity.R
+	- Plot maximum cosine similarity values in each layer
+* plot_layer.radius.R
+	- plot radius of each layer
+
+#############################################
+##### Application Step
+
+## Pre-requisites
+* Cartesian coordinates
+* folders_models              = "models/2020_05_16"
+* csv_application_sequence    = "data/application_sequences-05_05.csv"
+* csv_application_p5          = "data/application_p5-05_05.csv"
+* volume.id <- c(13, 13, 13, 13, 17, 17)
+* layer.id  <- c( 2,  4,  6,  8,  2,  4)
+
+## Results
+
+* figures/application_2020_09_19/
+	- With dataset update
+* figures/application_2020_09_19_v2/
+	- No dataset update

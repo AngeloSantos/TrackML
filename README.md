@@ -14,6 +14,7 @@ Summary about R and Bash Scripts
 ================================
 
 * apply_model.R - application step based on optimized *GMB* models
+* apply_model_cosine.R - application step based on optimized *GMB* models considering cosine similarity to search nearest hit
 * apply_model_Npred.R - application step based on optimized *GMB* models considering discrete values in the Z axis
 * compute_Kaggle_score.R - compute Kaggle score comparing results between Kaggle simulations and results from GBM
 * create_application_p5.R - create dataset with real data (from 5th to 10th layer) for application step
@@ -38,17 +39,19 @@ Summary about R and Bash Scripts
 * optimize_parameters_Npred.sh - create *R* scripts based on *optimize_parameters_Npred.R* for each sample after splitting
 * optimize_parameters_pt.R - optimize *GBM* parameters to predict pT
 * optimize_parameters_radius.R - optimize *GBM* parameters to predict tracking radius
+* plot_cos.similarity.R - create figure of cosine similarity values in each layer
+* plot_max.cos.similarity.R - create figure of maximum cosine similarity values in each layer
 * plot_detector.R - create figures of the detector based on the hits from Kaggle
 * plot_distHH_vs_Nhits.R - create figure of distance between two expected nearest hits versus number of hits per layer
 * plot_fit_circunference.R - create figure of circle fit on tracking hits
 * plot_hist_of_deltaphi.R - create figure of deltaphi between two subsequent hits in a track
 * plot_hist_of_z.R - create histogram with Z axis values
 * plot_hits.R - create figures of the detector based on the hits from Kaggle from splitted training samples
+* plot_layer.radius.R - create figure of radius in each layer
 * plot_layers_success_fail_hits.R - create figures of the hits from success and fail reconstruction in Z and Y axis
 * plot_leastDist.R - create histogram of the least distance between nearest and real hits
 * plot_reconstructed_tracks.R - create figure with real, predicted and reconstructed tracks
 * pt_angelos.lib.R - apply circle fit (based on Angelo's model with best triplet combinations) on application sample
 * pt_vs_radius_expectation.R - create figure of real pT versus expected track radius
 * show_metrics.R - compute number of sucesses and failures (for each layer) after *GBM* tracking reconstruction
-
 

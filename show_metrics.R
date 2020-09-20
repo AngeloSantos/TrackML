@@ -1,8 +1,8 @@
 #####################
 
-nr <- read.csv("figures/application_2020_06_13_v4/leastDist.near_real.csv")
-pr <- read.csv("figures/application_2020_06_13_v4/leastDist.pred_real.csv")
-pn <- read.csv("figures/application_2020_06_13_v4/leastDist.pred_near.csv")
+nr <- read.csv("figures/application_2020_09_19_v2/leastDist.near_real.csv")
+pr <- read.csv("figures/application_2020_09_19_v2/leastDist.pred_real.csv")
+pn <- read.csv("figures/application_2020_09_19_v2/leastDist.pred_near.csv")
 
 nr.rec <- c()
 pr.rec <- c()
