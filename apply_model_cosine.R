@@ -24,6 +24,13 @@ num.trees <- list( c( 360,  940, 1000,   320, 	1000, 	1000), # x
 ########################################
 ########################################
 ########################################
+# Create a function to write CSV in a simpler way
+write_csv <- function( object, output_directory, csv_name ){
+	write.csv( object,
+		   file=paste(output_directory, "/",
+			      deparse(substitute(object)), ".csv", sep=""),
+	  	   row.names=FALSE )
+}
 
 ########################################
 # Reading input files
@@ -99,9 +106,15 @@ nearest.hits   <- application_sequence
 
 ########################################
 # Maximum cosine similarity between predicted and nearest hits
-max.cos.similarity <- c()
+max.cos.similarity.s <- c() # Cases of success
+max.cos.similarity.f <- c() # Cases of failure
+max.cos.similarity   <- c() # Success + Failure
 # Group of cosine similarity between predicted and nearest hits
-cosine.similarity <- list()
+cosine.similarity.s <- list() # Cases of success
+cosine.similarity.f <- list() # Cases of failure
+cosine.similarity   <- list() # Success + Failure
+# Number of restricted hits around predicted hit
+n.hits.restricted <- c()
 # Least distance between predicted and nearest hits
 leastDist.pred_near <- c()
 # Least distance between predicted and real hits
@@ -157,11 +170,16 @@ for( l in layers ){
 	} # for( c in xyz_coord )
 
 	########################################
-	max.cos.similarity.col  <- c()
-	cos.similarity.col      <- c()
-	leastDist.col.pred_near <- c()
-	leastDist.col.pred_real <- c()
-	leastDist.col.near_real <- c()
+	cos.similarity.col       <- c()
+        cos.similarity.col.s     <- c()
+        cos.similarity.col.f     <- c()
+        max.cos.similarity.col.s <- c()
+        max.cos.similarity.col.f <- c()
+	max.cos.similarity.col   <- c()
+	n.hits.restricted.col    <- c()
+	leastDist.col.pred_near  <- c()
+	leastDist.col.pred_real  <- c()
+	leastDist.col.near_real  <- c()
 	nearest.col  <- c()
 	track.col.id <- c()
 
@@ -290,11 +308,30 @@ for( l in layers ){
 					(nearest.z - real.z)^2 )
 
 		########################################
+		n.hits.restricted.col   <- c(n.hits.restricted.col,
+					     length(hits.restricted))
 		cos.similarity.col      <- c(cos.similarity.col,      cos.similarity)
 		max.cos.similarity.col  <- c(max.cos.similarity.col,  max.cosine)
 		leastDist.col.pred_near <- c(leastDist.col.pred_near, dist.pred_near)
 		leastDist.col.pred_real <- c(leastDist.col.pred_real, dist.pred_real)
 		leastDist.col.near_real <- c(leastDist.col.near_real, dist.near_real)
+
+		if( dist.near_real == 0){
+			cos.similarity.col.s     <- c(cos.similarity.col.s,
+						      cos.similarity)
+			cos.similarity.col.f     <- c(cos.similarity.col.f, 888)
+			max.cos.similarity.col.s <- c(max.cos.similarity.col.s,
+						      max.cosine)
+                        max.cos.similarity.col.f <- c(max.cos.similarity.col.f, 888)
+		}
+		else{
+			cos.similarity.col.s     <- c(cos.similarity.col.s, 888)
+			cos.similarity.col.f     <- c(cos.similarity.col.f,
+                                                      cos.similarity)
+                        max.cos.similarity.col.s <- c(max.cos.similarity.col.s, 888)
+			max.cos.similarity.col.f <- c(max.cos.similarity.col.f,
+                                                      max.cosine)
+		}
 
 		########################################
 		track.col.id <- c(track.col.id, track.index)
@@ -327,8 +364,13 @@ for( l in layers ){
 
 
 	########################################
-	cosine.similarity[[l]] <- cos.similarity.col
-	max.cos.similarity  <- cbind(max.cos.similarity,  max.cos.similarity.col)
+	cosine.similarity[[l]]   <- cos.similarity.col
+	cosine.similarity.s[[l]] <- cos.similarity.col.s
+	cosine.similarity.f[[l]] <- cos.similarity.col.f
+	max.cos.similarity    <- cbind(max.cos.similarity,   max.cos.similarity.col)
+	max.cos.similarity.s  <- cbind(max.cos.similarity.s, max.cos.similarity.col.s)
+	max.cos.similarity.f  <- cbind(max.cos.similarity.f, max.cos.similarity.col.f)
+	n.hits.restricted <- cbind(n.hits.restricted, n.hits.restricted.col)
 	leastDist.pred_near <- cbind(leastDist.pred_near, leastDist.col.pred_near)
 	leastDist.pred_real <- cbind(leastDist.pred_real, leastDist.col.pred_real)
 	leastDist.near_real <- cbind(leastDist.near_real, leastDist.col.near_real)
@@ -364,7 +406,21 @@ for( l in layers ){
 message("*******************************************")
 message("* Setting column names for the dataset of maximum")
 message("  cosine similarity between predicted and nearest hits...")
-for( l in layers ) colnames(max.cos.similarity)[l-4] <- l
+for( l in layers ){
+       colnames(max.cos.similarity)[l-4]   <- l
+       colnames(max.cos.similarity.s)[l-4] <- l
+       colnames(max.cos.similarity.s)[l-4] <- l
+       colnames(max.cos.similarity.f)[l-4] <- l
+       colnames(max.cos.similarity.f)[l-4] <- l
+}
+
+########################################
+# Set column names for the dataset of number of restricted hits
+# aroundpredicted hit
+message("*******************************************")
+message("* Setting column names for the dataset of number")
+message("  of predicted hit...")
+for( l in layers ) colnames(n.hits.restricted)[l-4]   <- l
 
 ########################################
 # Set column names for the dataset of minimum distance between
@@ -426,27 +482,16 @@ for( l in layers ) colnames(rtm)[l-3] <- l
 # Save all necessary data.frames as csv for further analysis
 message("*******************************************")
 message("* Saving all necessary data.frames as csv for further analysis...")
-write.csv( max.cos.similarity,
-           file=paste(output_folder, "/max.cos.similarity.csv", sep=""),
-           row.names=FALSE )
-write.csv( leastDist.pred_near,
-	   file=paste(output_folder, "/leastDist.pred_near.csv", sep=""),
-	   row.names=FALSE )
-write.csv( leastDist.pred_real,
-           file=paste(output_folder, "/leastDist.pred_real.csv", sep=""),
-           row.names=FALSE ) 
-write.csv( leastDist.near_real,
-           file=paste(output_folder, "/leastDist.near_real.csv", sep=""),
-           row.names=FALSE )
-write.csv( predicted.hits,
-           file=paste(output_folder, "/predicted.hits.csv", sep=""),
-           row.names=FALSE )
-write.csv( nearest.hits,
-           file=paste(output_folder, "/nearest.hits.csv", sep=""),
-           row.names=FALSE )
-write.csv( rtm,
-           file=paste(output_folder, "/rtm.csv", sep=""),
-           row.names=FALSE )
+write_csv( max.cos.similarity, output_folder )
+write_csv( max.cos.similarity.s, output_folder )
+write_csv( max.cos.similarity.f, output_folder )
+write_csv( n.hits.restricted, output_folder )
+write_csv( leastDist.pred_near, output_folder )
+write_csv( leastDist.pred_real, output_folder )
+write_csv( leastDist.near_real, output_folder )
+write_csv( predicted.hits, output_folder )
+write_csv( nearest.hits, output_folder )
+write_csv( rtm, output_folder )
 
 ########################################
 # For safety, it is better to save this workspace so far
@@ -459,7 +504,12 @@ save.image( file=paste(output_folder, "/application_workspace.RData", sep="") )
 message("*******************************************")
 message("* Saving all necessary objects for further analysis...")
 save( cosine.similarity,
+      cosine.similarity.s,
+      cosine.similarity.f,
       max.cos.similarity,
+      max.cos.similarity.s,
+      max.cos.similarity.f,
+      n.hits.restricted,
       leastDist.pred_near,
       leastDist.pred_real,
       leastDist.near_real,

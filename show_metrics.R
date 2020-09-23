@@ -1,8 +1,8 @@
 #####################
 
-nr <- read.csv("figures/application_2020_09_19_v2/leastDist.near_real.csv")
-pr <- read.csv("figures/application_2020_09_19_v2/leastDist.pred_real.csv")
-pn <- read.csv("figures/application_2020_09_19_v2/leastDist.pred_near.csv")
+nr <- read.csv("figures/application_2020_09_19/leastDist.near_real.csv")
+pr <- read.csv("figures/application_2020_09_19/leastDist.pred_real.csv")
+pn <- read.csv("figures/application_2020_09_19/leastDist.pred_near.csv")
 
 nr.rec <- c()
 pr.rec <- c()
@@ -48,40 +48,6 @@ cat( " (", round(length(which( nr.rec > 0 ))*100/nrow(nr), 0), "%)\t", sep="" )
 cat("\n")
 
 #####################################
-# Mean distance over all hits
-message("*********************************")
-message("* Mean distance over all hits")
-message("  * Layer     5\t6\t7\t8\t9\t10\tWhole Track")
-    cat("  * Pred-Real ")
-pr.summ = 0
-for( c in 1:ncol(pr) ){
-        cat( round(mean(pr[,c]), 2), "\t" )
-	pr.summ = pr.summ + mean(pr[,c])
-}
-cat( round(pr.summ, 2) )
-cat("\n")
-
-message("*********************************")
-    cat("  * Pred-Near ")
-pn.summ = 0
-for( c in 1:ncol(pn) ){
-        cat( round(mean(pn[,c]), 2), "\t" )
-        pn.summ = pn.summ + mean(pn[,c])
-}
-cat( round(pn.summ, 2) )
-cat("\n")
-
-message("*********************************")
-    cat("  * Near-Real ")
-nr.summ = 0
-for( c in 1:ncol(nr) ){
-        cat( round(mean(nr[,c]), 2), "\t" )
-        nr.summ = nr.summ + mean(nr[,c])
-}
-cat( round(nr.summ, 2) )
-cat("\n")
-
-#####################################
 # Mean distance over failing hits
 message("*********************************")
 message("* Mean distance over failing hits")
@@ -115,6 +81,44 @@ for( c in 1:ncol(nr) ){
 cat( round(nr.summ, 2) )
 cat("\n")
 
+#####################################
+#####################################
+#####################################
+#####################################
+#####################################
+#####################################
+#####################################
+#####################################
+# Mean distance over all hits
+message("*********************************")
+message("* Mean distance over all hits")
+message("  * Layer     5\t6\t7\t8\t9\t10\tWhole Track")
+    cat("  * Pred-Real ")
+pr.summ = 0
+for( c in 1:ncol(pr) ){
+        cat( round(mean(pr[,c]), 2), "\t" )
+        pr.summ = pr.summ + mean(pr[,c])
+}
+cat( round(pr.summ, 2) )
+cat("\n")
 
+message("*********************************")
+    cat("  * Pred-Near ")
+pn.summ = 0
+for( c in 1:ncol(pn) ){
+        cat( round(mean(pn[,c]), 2), "\t" )
+        pn.summ = pn.summ + mean(pn[,c])
+}
+cat( round(pn.summ, 2) )
+cat("\n")
 
+message("*********************************")
+    cat("  * Near-Real ")
+nr.summ = 0
+for( c in 1:ncol(nr) ){
+        cat( round(mean(nr[,c]), 2), "\t" )
+        nr.summ = nr.summ + mean(nr[,c])
+}
+cat( round(nr.summ, 2) )
+cat("\n")
 

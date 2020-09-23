@@ -3,7 +3,7 @@ input.names = "figures/application_2020_09_19_v2/application_objects.RData"
 
 output.folder = "figures/application_2020_09_19_v2"
 
-output.names = "hist_Cosine_Similarity.png"
+output.names = "hist_Cosine_Similarity"
 
 draw.layers <- c(1:6) # indeed 5 to 10
 xmin = 0.975
@@ -27,62 +27,55 @@ rgb.color <- list( rgb(255,   0,   0, maxColorValue=255), # red
 library(latex2exp)
 library(scales)
 
-#phi.i  <- list()
-#phi.f  <- list()
-
 load(input.names)
 
-png(paste0(output.folder, "/", output.names),
-    units="px", width=1600, height=1600, res=250)
+plot.cos.hist <- function(cos.object, output_names, legend.title){
 
-hist( cosine.similarity[[1]][cosine.similarity[[1]] > xmin],
-      breaks=break.hists,
-      ylim=c(ymin, ymax),
-      xlab=TeX("$cos(\\theta) \\; \\[rad\\]$"),
-      ylab=sprintf("Frequency / %0.4f [rad]", x.step),
-      main="Cosine Similarity between Predicted and Near Hits",
-      col=alpha(rgb.color[[1]], h.scale),
-      border=NA )
-
-for( l in 2:length(draw.layers) ){
-	#column.name <- paste0("phi_", draw.layers[o])
-	#phi.i[[o]] <- input[, column.name]
-	#column.name <- paste0("phi_", draw.layers[o]+1)
-	#phi.f[[o]] <- input[, column.name]
-
-	hist( cosine.similarity[[l]][cosine.similarity[[l]] > xmin],
+	png(paste0(output.folder, "/", output_names, ".png"),
+	    units="px", width=1600, height=1600, res=250)
+	
+	hist( cos.object[[1]][cos.object[[1]] > xmin & cos.object[[1]] <= xmax],
 	      breaks=break.hists,
-	      col=alpha(rgb.color[[l]], h.scale),
-	      border=NA,
-	      add=TRUE )
-
-#	if( o == 1 ){
-#		hist( (phi.f[[o]] - phi.i[[o]]),
-#		      breaks=break.hists,
-#		      xlim=c(xmin,xmax),
-#		      col=alpha(rgb.color[[o]], h.scale),
-#		      border=NA,
-#		      xlab=TeX("$\\Delta\\Phi \\; \\[rad\\]$"),
-#		      main=TeX("$\\Delta\\Phi$ between Two Subsequent Layers") )
-#	}
-#	else{
-#        	hist( (phi.f[[o]] - phi.i[[o]]),
-#        	      breaks=break.hists,
-#		      col=alpha(rgb.color[[o]], h.scale),
-#		      border=NA,
-#        	      add=TRUE )
-#	}
-#	dev.off()
+	      ylim=c(ymin, ymax),
+	      xlab=TeX("$cos(\\theta) \\; \\[rad\\]$"),
+	      ylab=sprintf("Frequency / %0.4f [rad]", x.step),
+	      main="Cosine Similarity between Predicted and Near Hits",
+	      col=alpha(rgb.color[[1]], h.scale),
+	      border=NA )
+	
+	for( l in 2:length(draw.layers) ){
+		hist( cos.object[[l]][cos.object[[l]] > xmin & cos.object[[l]] <= xmax],
+		      breaks=break.hists,
+		      col=alpha(rgb.color[[l]], h.scale),
+		      border=NA,
+		      add=TRUE )
+	}
+	
+	number.cos.sim <- c()
+	for(l in draw.layers){
+		number.cos.sim <- c(number.cos.sim,
+				    length(cos.object[[l]][cos.object[[l]] <= xmax]))
+	}
+	
+	legend( "topleft",
+	        title = legend.title,
+	        legend=TeX(sprintf( "Layers %d (%d)", draw.layers+4, number.cos.sim )),
+	        fill=c( alpha(rgb.color[draw.layers], h.scale) ),
+	       	border=NA, bty="n" )
+	dev.off()
 }
 
-number.cos.sim <- c()
-for(l in draw.layers)
-	number.cos.sim <- c(number.cos.sim, length(cosine.similarity[[l]]))
+plot.cos.hist( cosine.similarity,
+	       "hist_Cosine_Similarity_S.F",
+	       "Success + Fail Cases")
 
-legend( "topleft",
-        legend=TeX(sprintf( "Layers %d (%d)", draw.layers+4, number.cos.sim )),
-        fill=c( alpha(rgb.color[draw.layers], h.scale) ),
-       	border=NA, bty="n" )
-dev.off()
+plot.cos.hist( cosine.similarity.s,
+               "hist_Cosine_Similarity_S",
+               "Success Cases")
+
+plot.cos.hist( cosine.similarity.f,
+               "hist_Cosine_Similarity_F",
+               "Fail Cases")
 
 
+#########################################

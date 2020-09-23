@@ -48,6 +48,9 @@ Loading required package: SnowballC
 * Setting column names for the dataset of maximum
   cosine similarity between predicted and nearest hits...
 *******************************************
+* Setting column names for the dataset of number
+  of predicted hit...
+*******************************************
 * Setting column names for the dataset of minimum
   distance between predicted and nearest hits...
 *******************************************
